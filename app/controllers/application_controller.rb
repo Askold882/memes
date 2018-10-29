@@ -4,11 +4,11 @@ class ApplicationController < ActionController::Base
     private
   
     def curent_user
-      @curent_user ||= User.find_by(user_token: cookies[:user_token])
+      @curent_user ||= User.find_by(user_token: request.headers["user_token"])
     end
   
     def auth_user
-      redirect_to new_session_path if !curent_user
+      render json: {error: 'unauthorized'}, status: 401 if !curent_user
     end
 
 end

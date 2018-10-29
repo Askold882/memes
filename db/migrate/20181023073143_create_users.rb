@@ -5,6 +5,7 @@ class CreateUsers < ActiveRecord::Migration[5.2]
       t.string :password_digest
       t.string :confirm_token
       t.string :user_token
+      t.string :username
     end
   end
 end

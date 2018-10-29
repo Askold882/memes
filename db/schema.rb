@@ -60,6 +60,7 @@ ActiveRecord::Schema.define(version: 2018_10_23_074357) do
     t.string "password_digest"
     t.string "confirm_token"
     t.string "user_token"
+    t.string "username"
   end
 
 end
