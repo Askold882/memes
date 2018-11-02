@@ -6,7 +6,7 @@ class UsersController < ApplicationController
       render json: { message: 'User created!' }, status: 200
     else
       render json: { error: user.errors.full_messages.to_sentence }, status: 500
-
+      
     end
   end
 

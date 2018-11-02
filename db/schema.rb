@@ -48,7 +48,8 @@ ActiveRecord::Schema.define(version: 2018_10_23_074357) do
   end
 
   create_table "profiles", force: :cascade do |t|
-    t.string "nickname"
+    t.string "username"
+    #t.string "nickname"
     t.string "avatar"
     t.string "preferences"
     t.datetime "created_at", null: false
@@ -56,7 +57,7 @@ ActiveRecord::Schema.define(version: 2018_10_23_074357) do
   end
 
   create_table "users", force: :cascade do |t|
-    t.string "email"
+    #t.string "email"
     t.string "password_digest"
     t.string "confirm_token"
     t.string "user_token"

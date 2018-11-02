@@ -1,10 +1,10 @@
 class SessionsController < ApplicationController
   def create
-    user = User.find_by(nickname: params[:nickname])
+    user = User.find_by(username: params[:username])
     if user && user.authenticate(params[:password])
       if user.confirm_token == nil
         cookies[:user_token] = user.user_token
-        redirect_to tasks_path
+        redirect_to profile_path
       else
         render json: { error: 'unconfirmed' }
       end
