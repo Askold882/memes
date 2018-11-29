@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_10_23_074357) do
+ActiveRecord::Schema.define(version: 2018_11_09_072004) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string "namespace"
@@ -48,8 +48,7 @@ ActiveRecord::Schema.define(version: 2018_10_23_074357) do
   end
 
   create_table "profiles", force: :cascade do |t|
-    t.string "username"
-    #t.string "nickname"
+    t.string "nickname"
     t.string "avatar"
     t.string "preferences"
     t.datetime "created_at", null: false
@@ -57,11 +56,12 @@ ActiveRecord::Schema.define(version: 2018_10_23_074357) do
   end
 
   create_table "users", force: :cascade do |t|
-    #t.string "email"
+    t.string "email"
     t.string "password_digest"
     t.string "confirm_token"
     t.string "user_token"
     t.string "username"
+    t.string "avatar"
   end
 
 end
